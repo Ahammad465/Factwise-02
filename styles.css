@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://user-images.githubusercontent.com/6901805/58038897-167f0280-7ae6-11e9-94eb-88e880a25f0f.gif') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.user-list {
+    list-style: none;
+    padding: 0;
+}
+
+.user-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+    transform: scale(1.02);
+}
+
+.user-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+}
+
+.user-card-details {
+    display: none;
+    padding-top: 10px;
+}
+
+.user-card.open .user-card-details {
+    display: block;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+.user-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-card .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.user-card .actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-card .actions .edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.user-card .actions .delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.user-card .actions .edit-btn:hover {
+    background-color: #45a049;
+}
+
+.user-card .actions .delete-btn:hover {
+    background-color: #e57373;
+}
+
+.edit-form, .delete-dialog {
+    display: none;
+}
+
+.edit-form.active, .delete-dialog.active {
+    display: block;
+}
+
+.edit-form label {
+    display: block;
+    margin: 10px 0;
+}
+
+.edit-form input, .edit-form select, .edit-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-form .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.edit-form .save-btn:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 1000px; opacity: 1; }
+}
